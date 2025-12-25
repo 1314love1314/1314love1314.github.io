@@ -1,7 +1,19 @@
 <html>
   <title>我们</title>
   <body>
-    <h1>S先生与A小姐已经在一起好多好多天了</h1>
-        <a>本来我想写个计时功能的，但是没想到逻辑很复杂，我还要考虑到每个月份的天数不同，四年一润，各种问题。但是没关系，余生还有很长，我们可以慢慢写。</a>
+    <h1 id="timestone">S先生与A小姐已经在一起好多好多天了</h1>
+        <!--<a>本来我想写个计时功能的，但是没想到逻辑很复杂，我还要考虑到每个月份的天数不同，四年一润，各种问题。但是没关系，余生还有很长，我们可以慢慢写。--2023.5.20</a>-->
   </body>
+  <script>
+    let startday = new Date('2019-01-17T21:30:00');
+
+setInterval(() => {
+    const diff = new Date() - startday;
+    const days = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const minutes = Math.floor((diff % 3600000) / 60000);
+    const seconds = Math.floor((diff % 60000) / 1000);
+    
+    document.getElementById('timestone').innerText="S先生与A小姐已经在一起"+days+"天"+hours+"小时"+minues+"分钟"+seconds+"秒了"}, 1000);
+  </script>
 </html>
